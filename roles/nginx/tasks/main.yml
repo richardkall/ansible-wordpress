@@ -1,0 +1,10 @@
+---
+- name: Install Nginx
+  apt: name=nginx state=present
+
+- name: Add Nginx config
+  template: src=default dest=/etc/nginx/sites-available/default
+  notify: Reload Nginx
+
+- name: Start Nginx service
+  service: name=nginx state=started enabled=true

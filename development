@@ -1,0 +1,5 @@
+[wordpress]
+10.10.10.10
+
+[development:children]
+wordpress

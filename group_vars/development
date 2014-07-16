@@ -1,0 +1,10 @@
+---
+hostname: example.dev
+wp_admin_email: admin@example.dev
+wp_admin_password: password
+wp_admin_user: admin
+wp_db_password: password
+# delete_all_content: true
+# wp_db_import: database.sql.gz
+# wp_plugins:
+#   - { name: akismet, version: 3.0.1 }

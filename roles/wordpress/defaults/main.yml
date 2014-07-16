@@ -1,0 +1,14 @@
+---
+delete_all_content: false
+delete_hello_dolly: true
+wp_admin_user: admin
+wp_cli_bin: /usr/bin/wp
+wp_cli_url: https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+wp_db_host: localhost
+wp_db_import: false
+wp_db_name: wordpress
+wp_db_user: wordpress
+wp_debug: false
+wp_lang: en_US
+wp_table_prefix: wp_
+wp_version: 3.9.1

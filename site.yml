@@ -1,0 +1,11 @@
+---
+- name: Install MySQL, WordPress, Nginx and PHP-FPM
+  hosts: wordpress
+  sudo: yes
+
+  roles:
+    - common
+    - mysql
+    - php
+    - nginx
+    - wordpress

@@ -1,0 +1,23 @@
+server {
+  listen 80 default_server;
+  server_name {{ hostname }};
+  root {{ wp_root }};
+
+  client_max_body_size {{ client_max_body_size }};
+
+  location ~ \.php$ {
+    try_files $uri =404;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_index index.php;
+    include fastcgi_params;
+  }
+
+  location / {
+    index index.php index.html;
+    try_files $uri $uri/ /index.php?$args;
+  }
+
+  location ~ /\. {
+    deny all;
+  }
+}

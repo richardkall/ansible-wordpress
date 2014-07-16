@@ -1,0 +1,21 @@
+---
+- name: Copy database dump
+  copy: src={{ wp_db_import }} dest=/tmp
+
+- name: Reset database
+  command: wp db reset --yes --allow-root chdir={{ wp_root }}
+
+- name: Import database
+  command: wp db import /tmp/{{ wp_db_import }} --allow-root chdir={{ wp_root }}
+
+- name: Replace site URL in database
+  command: wp db query "UPDATE wp_options SET option_value='http://{{ hostname }}' WHERE option_name='siteurl';" --allow-root chdir={{ wp_root }}
+
+- name: Replace home URL in database
+  command: wp db query "UPDATE wp_options SET option_value='http://{{ hostname }}' WHERE option_name='home';" --allow-root chdir={{ wp_root }}
+
+- name: Reset user passwords
+  command: wp db query "UPDATE wp_users SET user_pass=MD5('{{ wp_admin_password }}');" --allow-root chdir={{ wp_root }}
+
+- name: Delete database dump
+  file: path=/tmp/{{ wp_db_import }} state=absent

@@ -1,0 +1,10 @@
+---
+- name: Install PHP
+  apt: name={{ item }} state=present
+  with_items:
+    - php5-cli
+    - php5-fpm
+    - php5-mysql
+
+- name: Start PHP5-FPM service
+  service: name=php5-fpm state=started enabled=true
