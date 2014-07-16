@@ -9,3 +9,10 @@ This playbook will install and configure MySQL, WordPress, Nginx, and PHP-FPM. V
 - [Ansible](http://www.ansible.com)
 - [Vagrant](http://www.vagrantup.com)
 - [VirtualBox](http://www.virtualbox.org)
+
+## Usage
+
+### Development
+
+1. Add hostname to `/etc/hosts`.
+2. Run `vagrant up` to create and provision virtual machine.
