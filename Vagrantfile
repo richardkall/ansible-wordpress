@@ -7,9 +7,13 @@ Vagrant.configure("2") do |config|
   #   group: "www-data",
   #   mount_options: ["dmode=776", "fmode=775"]
 
-  config.vm.provision :ansible do |ansible|
-    ansible.inventory_path = "development"
-    ansible.limit = "all"
-    ansible.playbook = "site.yml"
+  config.vm.provider :virtualbox do |v|
+    v.memory = 1024
+  end
+
+  config.vm.provision :ansible do |a|
+    a.inventory_path = "development"
+    a.limit = "all"
+    a.playbook = "site.yml"
   end
 end
