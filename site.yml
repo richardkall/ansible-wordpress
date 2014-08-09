@@ -4,8 +4,8 @@
   sudo: yes
 
   roles:
-    - common
-    - mysql
-    - php
-    - nginx
-    - wordpress
+    - { role: common, tags: common }
+    - { role: mysql, tags: mysql }
+    - { role: php, tags: php }
+    - { role: nginx, tags: nginx }
+    - { role: wordpress, tags: wordpress }
