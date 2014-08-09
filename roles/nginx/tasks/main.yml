@@ -2,8 +2,16 @@
 - name: Install Nginx
   apt: name=nginx state=present
 
+- name: Disable default site
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  notify: Reload Nginx
+
 - name: Add Nginx config
-  template: src=default dest=/etc/nginx/sites-available/default
+  template: src=default dest=/etc/nginx/sites-available/{{ site_name }}
+  notify: Reload Nginx
+
+- name: Enable site
+  file: src=/etc/nginx/sites-available/{{ site_name }} dest=/etc/nginx/sites-enabled/{{ site_name }} state=link
   notify: Reload Nginx
 
 - name: Start Nginx service

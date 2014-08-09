@@ -1,3 +1,7 @@
 ---
-site_name: Example Site
-wp_root: /srv/wordpress
+site_name: example.com
+wp_root: /srv/example.com/wordpress
+wp_db_name: example_com
+wp_db_user: example_user
+# wp_plugins:
+#   - { name: akismet, version: 3.0.1 }

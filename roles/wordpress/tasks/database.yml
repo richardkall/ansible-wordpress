@@ -1,0 +1,17 @@
+---
+- name: Create WordPress database
+  mysql_db: name={{ wp_db_name }} state=present
+
+- name: Create WordPress database user
+  mysql_user: name={{ wp_db_user }} password={{ wp_db_password }} priv={{ wp_db_name }}.*:ALL state=present
+
+- name: Install WordPress tables
+  command: wp core install
+    --url={{ host }}
+    --title={{ site_name }}
+    --admin_user={{ wp_admin_user }}
+    --admin_password={{ wp_admin_password }}
+    --admin_email={{ wp_admin_email }}
+    --allow-root
+    chdir={{ wp_root }}
+  notify: Reload Nginx

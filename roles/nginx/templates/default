@@ -1,6 +1,8 @@
 server {
+  charset utf-8;
+
   listen 80 default_server;
-  server_name {{ hostname }};
+  server_name {{ host }};
   root {{ wp_root }};
 
   client_max_body_size {{ client_max_body_size }};

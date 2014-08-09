@@ -12,8 +12,9 @@ $table_prefix  = "{{ wp_table_prefix }}";
 
 define("WPLANG", "{{ wp_lang }}");
 define("WP_DEBUG", {{ wp_debug }});
+define("WP_ENV", "{{ env }}");
 
-if ( !defined("ABSPATH") )
+if (!defined("ABSPATH"))
   define("ABSPATH", dirname(__FILE__) . "/");
 
 require_once(ABSPATH . "wp-settings.php");
