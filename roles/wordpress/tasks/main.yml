@@ -20,7 +20,7 @@
   when: wp_delete_content
 
 - include: db_import.yml tags=import
-  when: wp_db_import
+  when: wp_db_import|default(False)
 
 - name: Change ownership of WordPress installation
   file: path={{ wp_root }} owner=www-data group=www-data state=directory recurse=yes

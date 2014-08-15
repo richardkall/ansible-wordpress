@@ -9,10 +9,10 @@
   command: wp db import /tmp/{{ wp_db_import }} --allow-root chdir={{ wp_root }}
 
 - name: Replace site URL in database
-  command: wp option update siteurl "http://{{ hostname }}" --allow-root chdir={{ wp_root }}
+  command: wp option update siteurl "http://{{ host }}" --allow-root chdir={{ wp_root }}
 
 - name: Replace home URL in database
-  command: wp option update home "http://{{ hostname }}" --allow-root chdir={{ wp_root }}
+  command: wp option update home "http://{{ host }}" --allow-root chdir={{ wp_root }}
 
 - name: Reset user passwords
   command: wp db query "UPDATE wp_users SET user_pass=MD5('{{ wp_admin_password }}');" --allow-root chdir={{ wp_root }}
