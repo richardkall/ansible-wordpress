@@ -90,7 +90,7 @@ Enable virtual machine [folder sync](https://docs.vagrantup.com/v2/synced-folder
 ```ruby
 # Vagrantfile
 Vagrant.configure("2") do |config|
-  config.vm.synced_folder "<LOCAL_PATH>", "<REMOTE_PATH>", owner: "vagrant", group: "www-data", mount_options: ["dmode=776", "fmode=775"]
+  config.vm.synced_folder "../example-theme", "/srv/example.com/wordpress/wp-content/themes/example-theme", nfs: true
 end
 ```
 
