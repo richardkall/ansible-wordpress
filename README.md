@@ -14,6 +14,12 @@ This playbook will install and configure MySQL, WordPress, Nginx, and PHP-FPM. V
 
 ### Development
 
+Install [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) to always keep VirtualBox Guest Additions up-to-date (optional):
+
+```bash
+$ vagrant plugin install vagrant-vbguest
+```
+
 Add hostname to `/etc/hosts`.
 
 Run `vagrant up` to create and provision virtual machine.
