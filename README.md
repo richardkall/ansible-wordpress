@@ -79,7 +79,7 @@ Delete all WordPress content (sample comments, posts etc.) with:
 wp_delete_content: true
 ```
 
-**Important:** Remember to remove the `delete_all_content` variable or set it to `false` before provisioning the server again.
+**Important:** Remember to remove the `wp_delete_content` variable or set it to `false` before provisioning the server again.
 
 More role defaults can be found in `roles/<role>/defaults/main.yml` and easily overwritten using group variables.
 
