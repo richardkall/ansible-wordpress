@@ -13,6 +13,7 @@ $table_prefix  = "{{ wp_table_prefix }}";
 define("WPLANG", "{{ wp_lang }}");
 define("WP_DEBUG", {{ wp_debug }});
 define("WP_ENV", "{{ env }}");
+define("CONCATENATE_SCRIPTS", false);
 
 if (!defined("ABSPATH"))
   define("ABSPATH", dirname(__FILE__) . "/");
