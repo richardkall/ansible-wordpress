@@ -36,7 +36,7 @@ $ ansible-playbook site.yml --private-key <private_key.pem> -i production -u ubu
 
 If you want to run specific tasks, add `--tags <tag>` when running `ansible-playbook`.
 
-## Configuration
+## Config
 
 All Ansible configration is done in [YAML](http://www.yaml.org).
 
@@ -96,4 +96,4 @@ end
 
 ## License
 
-Copyright © 2014 [Richard Käll](http://richardkall.se). Licensed under the MIT license.
+MIT &copy; [Richard Käll](http://richardkall.se)
