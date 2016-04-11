@@ -12,8 +12,8 @@
 - name: Add WordPress config file
   template: src=wp-config.php dest={{ wp_root }}
 
-- include: database.yml tags=database
-- include: plugins.yml tags=plugins
+- include: database.yml
+- include: plugins.yml
 
 - name: Delete content
   command: wp site empty --yes --allow-root chdir={{ wp_root }}
