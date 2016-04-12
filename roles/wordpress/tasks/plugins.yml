@@ -5,6 +5,6 @@
 
 - name: Install WordPress plugins
   command: wp plugin install {{ item.name }} --version={{ item.version }} --activate --force --allow-root chdir={{ wp_root }}
-  with_items: wp_plugins
+  with_items: "{{ wp_plugins }}"
   when: wp_plugins is defined
   tags: plugins
