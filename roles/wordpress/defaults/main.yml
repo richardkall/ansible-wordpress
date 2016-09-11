@@ -8,4 +8,4 @@ wp_debug: false
 wp_delete_content: false
 wp_lang: en_US
 wp_table_prefix: wp_
-wp_version: 4.4.2
+wp_version: 4.6.1
